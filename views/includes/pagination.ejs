@@ -1,0 +1,42 @@
+<nav>
+    <ul class="pagination justify-content-center">
+        <li class="page-item <%= hasPreviousPage ? " " : " disabled" %>">
+            <a style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="page-link" href="?page=<%= currentPage - 1  %>">Previous</a>
+        </li>
+        <% if(currentPage !== 1 && previousPage !== 1 ) { %>
+            <li class="page-item"  >
+                <a style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="page-link" href="?page=1">
+                    <%= 1 %>
+                </a>
+            </li>
+            <% } %>
+        <% if(hasPreviousPage) { %>
+            <li class="page-item"  >
+                <a style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="page-link" href="?page=<%= previousPage  %> ">
+                    <%= previousPage %>
+                </a>
+            </li>
+            <% } %>
+        <li class="page-item active"><a style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="page-link" href="?page=<%= currentPage %> ">
+                <%= currentPage%>
+            </a></li>
+        <% if(hasNextPage) { %>
+            <li class="page-item"  >
+                <a style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="page-link" href="?page=<%= nextPage  %> ">
+                    <%= nextPage %>
+                </a>
+            </li>
+            <% } %>
+            <% if(lastPage !== currentPage && nextPage !== lastPage ) { %>
+                <li class="page-item"  >
+                    <a style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="page-link" href="?page=<%= lastPage  %> ">
+                        <%= lastPage %>
+                    </a>
+                </li>
+                <% } %>
+
+                <li class="page-item <%= hasNextPage ? " " : " disabled" %>">
+                    <a style="font-family:'Frank lin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" class="page-link" href="?page=<%= currentPage + 1  %>">Next</a>
+                </li>
+    </ul>
+</nav>

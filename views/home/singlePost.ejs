@@ -1,0 +1,52 @@
+<nav>
+    <%- include("../includes/navbar.ejs") %>
+</nav>
+<body>
+    <header class="masthead" style="background-image: url('/uploads/thumbnails/<%= post.thumbnail %>')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1 style="font-family: 'BYekan';font-size: 100;" >
+                            <%= post.title %>
+                        </h1>
+                        <h2 style="font-family: 'BYekan';font-size: 60;" class="subheading">
+                            <%= post.title %>
+                        </h2>
+                        <span style="font-family: 'BYekan';font-size: 30;" class="meta">
+                            پست شده توسط
+                            <a style="font-family: 'BYekan';" href="#">
+                                <%= post.user.fullname %>
+                            </a>
+                            در تاریخ <%= convertDate(post.createdAt) %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content-->
+    <article class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p style="font-family: 'BYekan'"><%= post.body %> 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="card my-4">
+        <h5 class="card-header" style="font-family: 'BYekan'">نظر خود را بنویسید:</h5>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <textarea class="form-control" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    ثبت نظر
+                </button>
+            </form>
+        </div>
+    </div>
+</body>

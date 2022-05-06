@@ -1,0 +1,71 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+            <form class="login100-form validate-form" action="/user/register" method="POST">
+                <span class="login100-form-title p-b-55" style="font-family: BYekan;">
+                    ساخت حساب کاربری
+                </span>
+                <%- include("./includes/validationErrors.ejs") %> 
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="text" name="fullname" id="Email" placeholder="نام و نام خانوادگی"
+                        style="font-family: BYekan;" required >
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100" style="font-family:Verdana, Geneva, Tahoma, sans-serif">
+                        <span class="lnr lnr-envelope"></span>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="text" name="email" placeholder="ایمیل" id="Email"
+                        style="font-family: BYekan;" required >
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <span class="lnr lnr-envelope"></span>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                    <input class="input100" type="password" name="password" id="Pass" placeholder="رمزعبور"
+                        style="font-family: BYekan;" required >
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <span class="lnr lnr-lock"></span>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                    <input class="input100" type="password" name="confirmPassword" id="Confirmpass"
+                        placeholder="تکرار رمز عبور" style="font-family: BYekan;" required >
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <span class="lnr lnr-lock"></span>
+                    </span>
+                </div>
+
+                <div class="contact100-form-checkbox m-l-4">
+
+                    <a style="font-family: 'BYekan'; font-size: 15px;" href="/user/login">حساب کاربری دارم</a>
+
+                </div>
+
+                <div class="container-login100-form-btn p-t-25">
+                    <input type="submit" value="ثبت نام" class="login100-form-btn"
+                        style="font-family:'BYekan';"></input>
+                </div>
+
+                <div class="text-center w-full p-t-42 p-b-22">
+
+                </div>
+
+
+                <div class="text-center w-full p-t-115">
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

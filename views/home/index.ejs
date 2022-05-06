@@ -1,0 +1,50 @@
+<nav>
+    <%- include("../includes/navbar.ejs") %>
+</nav>
+<header>
+    <%- include("../includes/header.ejs") %>
+</header>
+<body>
+    <% if(posts.length) { %>
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <!-- Post preview-->
+                    <% for(post of posts) { %>
+                        <% if(post.thumbnail) { %>
+                            <img class="card-img-top" src="/uploads/thumbnails/<%= post.thumbnail %>"
+                                alt="card image cap" />
+                            <% } %>
+                                <div class="post-preview">
+                                    <a href="/singlePost/<%= post.id %>">
+                                        <h2 class="post-title" style="font-family: 'BYekan'">
+                                            <%=post.title %>
+                                        </h2>
+                                        <h3 class="post-subtitle" style="font-family: 'BYekan';font-size: medium;">
+                                            <%- truncate( post.body , 200) %>
+                                        </h3>
+                                    </a>
+                                    <p style="font-family: 'BYekan';font-size: medium;" class="post-meta">
+                                        پست شده توسط
+                                        <a href="#">
+                                            <%= post.user.fullname %>
+                                        </a>
+                                        در تاریخ<%= convertDate(post.createdAt) %>
+                                    </p>
+                                </div>
+                                <!-- Divider-->
+                                <hr class="my-4" />
+                                <% } %>
+                </div>
+            </div>
+            <%- include("../includes/pagination.ejs") %>
+        </div>
+        <% } else { %>
+            <div class="m-5 text-center">
+                <h1>هیچ پستی وجو ندارد</h1>
+            </div>
+            <% } %>
+</body>
+<footer>
+    <%- include("../includes/footer.ejs") %>
+</footer>

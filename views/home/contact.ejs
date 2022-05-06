@@ -1,0 +1,89 @@
+<nav>
+    <%- include("../includes/navbar.ejs") %>
+</nav>
+
+<body>
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('/img/contact-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="page-heading">
+                        <h1 style="font-family: 'BYekan';">تماس با ما</h1>
+                        <span style="font-family: 'BYekan';" class="subheading">سوالی دارید? جواب آن پیش ماست.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content-->
+    <main class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="my-5">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <div class="w-100 text-center mx-auto">
+                            <%- include("../includes/LoginMessages.ejs") %>
+                             <%- include("../includes/validationErrors.ejs") %>
+                        </div>
+                        <form action="/user/contact-us" method="post">
+                            <div class="form-floating">
+                                <input class="form-control" id="name" name="name" type="text"
+                                    placeholder="نام خود را وارد نمایید" data-sb-validations="required" />
+                                <label for="name">نام</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">نام شما مور نیاز است.
+                                </div>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" name="email" id="email" type="email"
+                                    placeholder="ایمیل خود را وارد نمایید" data-sb-validations="required,email" />
+                                <label for="email">ایمیل</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">ایمیل شما مورد نیاز است.
+                                </div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">ایمیل معتبر نمیباشد.</div>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" name="phoneNumber" id="phone" type="tel"
+                                    placeholder="شماره تماس خود را وار نمایید" data-sb-validations="required" />
+                                <label for="phone">شماره همراه</label>
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">شماره همراه شما مورد
+                                    نیاز است</div>
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" name="message" id="message"
+                                    placeholder="پیام خود را اینجا وارد نمایید" style="height: 12rem"
+                                    data-sb-validations="required"></textarea>
+                                <label for="message">پیام</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">پیام مور نیاز میباشد.
+                                </div>
+                            </div>
+                            <br>
+                            <div class="w-25 text-center">
+                                <img src="/user/captcha.png" alt="captcha" />
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    name="captcha"
+                                    placeholder="کد امنیتی"
+                                />
+                            </div>
+                            <br>
+                            <div>
+                                <!-- Submit Button-->
+                            <button type="submit" style="font-family: 'BYekan';"
+                            class="btn btn-primary text-uppercase">ارسال</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
